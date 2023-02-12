@@ -1,5 +1,6 @@
 @echo off
 color F0
+setlocal enableextensions disabledelayedexpansion
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\Security"
 if '%errorlevel%' NEQ '0' (
 goto UACPrompt
@@ -12,9 +13,27 @@ cscript "%temp%\getadmin.vbs" >nul
 exit /B
 :gotAdmin
 set aria2c="https://github.com/Xbodw/Rele/raw/main/aria2c.exe"
-title Windows11Hacker [下载组件]
 cd /d %~dp0
+:up
+title Windows11Hacker [检查更新]
+powershell curl  -o "Versions.xml" "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml" 
+set "ver=0.0"
+    for /f "tokens=3 delims=<>" %%a in (
+        'find /i "<Version>" ^< "Versions.xml"'
+    ) do set "ver=%%a"
+del /f /q Versions.xml
+if "%ver%" GEQ "1.3" (
+ echo 发现新版本，正在自动更新
+ powershell curl -o "11Hacker-n.bat" "https://github.com/Xbodw/Windows11Hacker/raw/main/11Hacker.bat"
+ echo @echo off > cp.bat
+ echo copy /y "11Hacker-n.bat" "11Hacker.bat" >>cp.bat
+ start "" "cmd.exe /c cp.bat" 
+ exit /b
+ pause
+)
+goto pd
 :pd
+title Windows11Hacker [下载组件]
 if not exist "%cd%\Assets" mkdir Assets
 if not exist "%cd%\Assets\aria2c.exe" (
  goto psi
@@ -42,7 +61,7 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
@@ -56,7 +75,7 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
@@ -75,7 +94,7 @@ cls
 title Windows11Hacker [正式模块]
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
@@ -117,7 +136,7 @@ cls
 title Windows11Hacker [ISO制作]
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
@@ -129,7 +148,7 @@ cls
 title Windows11Hacker [完成]
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
@@ -142,7 +161,7 @@ title Windows11Hacker [正式模块]
 if exist Cache rd /s /q Cache
 echo Windows11Hacker
 echo=
-echo 重制版 1.2
+echo 重制版 1.3
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!
 echo=
