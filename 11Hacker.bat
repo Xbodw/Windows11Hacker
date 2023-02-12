@@ -1,6 +1,7 @@
 @echo off
 color F0
 setlocal enableextensions disabledelayedexpansion
+if exist cp.bat del /f /q cp.bat
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\Security"
 if '%errorlevel%' NEQ '0' (
 goto UACPrompt
