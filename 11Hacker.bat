@@ -7,12 +7,12 @@ goto UACPrompt
 :UACPrompt
 echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
 echo UAC.ShellExecute "%~s0", "%*", "", "runas", 1 >> "%temp%\getadmin.vbs"
-echo ÕýÔÚÒÔ¹ÜÀíÔ±Éí·ÝÆô¶¯!!!
+echo æ­£åœ¨ä»¥ç®¡ç†å‘˜èº«ä»½å¯åŠ¨!!!
 cscript "%temp%\getadmin.vbs" >nul
 exit /B
 :gotAdmin
 set aria2c="https://github.com/Xbodw/Rele/raw/main/aria2c.exe"
-title Windows11Hacker [ÏÂÔØ×é¼þ]
+title Windows11Hacker [ä¸‹è½½ç»„ä»¶]
 cd /d %~dp0
 :pd
 if not exist "%cd%\Assets" mkdir Assets
@@ -28,10 +28,9 @@ if not exist "%cd%\Assets\bin" (
 goto Go
 :psi
 echo=
-echo ÕýÔÚÏÂÔØAria2c£¬µÚÒ»´ÎÏÂÔØ¿ÉÄÜÐèÒªºÜ¾Ã^(°ëÐ¡Ê±^)
+echo æ­£åœ¨ä¸‹è½½Aria2cï¼Œç¬¬ä¸€æ¬¡ä¸‹è½½å¯èƒ½éœ€è¦å¾ˆä¹…^(åŠå°æ—¶^)
 powershell curl  -o "%cd%\Assets\aria2c.exe"  "%aria2c%"
-::bitsadmin /transfer ±ØÒª×é¼þ /download /priority HIGH %aria2c% "%cd%\Assets\aria2c.exe"
-pause
+::bitsadmin /transfer å¿…è¦ç»„ä»¶ /download /priority HIGH %aria2c% "%cd%\Assets\aria2c.exe"
 goto pd
 :7z1
 if exist "%cd%\Assets\aria2c.exe" goto 7z
@@ -43,50 +42,49 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÕýÔÚÏÂÔØWindows11Hacker±ØÒªµÄ×é¼þ£¬ÏÂÔØÖ®ºó½«½øÐÐWindowsÐÞ¸Ä
+echo æ­£åœ¨ä¸‹è½½Windows11Hackerå¿…è¦çš„ç»„ä»¶ï¼Œä¸‹è½½ä¹‹åŽå°†è¿›è¡ŒWindowsä¿®æ”¹
 echo=
 Assets\aria2c -c -s 16 -d "%cd%\Assets" "https://github.com/Xbodw/Rele/raw/main/11HackerAssets.zip"
 Assets\7z x -y -oAssets\ "Assets\11HackerAssets.zip"
-pause
 del /f /q "Assets\11HackerAssets.zip"
 goto pd
 :7z
 cls
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÕýÔÚÏÂÔØWindows11Hacker±ØÒªµÄ×é¼þ£¬ÏÂÔØÖ®ºó½«½øÐÐWindowsÐÞ¸Ä
+echo æ­£åœ¨ä¸‹è½½Windows11Hackerå¿…è¦çš„ç»„ä»¶ï¼Œä¸‹è½½ä¹‹åŽå°†è¿›è¡ŒWindowsä¿®æ”¹
 Assets\aria2c -c -s 16 -d "%cd%\Assets" "https://github.com/Xbodw/Rele/raw/main/7z.exe"
 Assets\aria2c -c -s 16 -d "%cd%\Assets" "https://github.com/Xbodw/Rele/raw/main/7z.dll"
 goto pd
 :ps
-"mshta.exe" vbscript:msgBox("Î´ÕÒµ½%SorF%",64,"Windows11Hacker")(window.close)
+"mshta.exe" vbscript:msgBox("æœªæ‰¾åˆ°%SorF%",64,"Windows11Hacker")(window.close)
  goto Go
 :pus
-"mshta.exe" vbscript:msgBox("ÎÄ¼þÀàÐÍ´íÎó,ÔÚ%SorF%",64,"Windows11Hacker")(window.close)
+"mshta.exe" vbscript:msgBox("æ–‡ä»¶ç±»åž‹é”™è¯¯,åœ¨%SorF%",64,"Windows11Hacker")(window.close)
  goto Go
 :Go
 cls
-title Windows11Hacker [ÕýÊ½Ä£¿é]
+title Windows11Hacker [æ­£å¼æ¨¡å—]
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÇëÑ¡ÔñÒ»¸ö´ýÐÞ¸ÄWindows11ISO£¬Ãû³Æ²»ÐèÒª´øÒýºÅ
-set /p SorF=ÊäÈëISO^>
+echo è¯·é€‰æ‹©ä¸€ä¸ªå¾…ä¿®æ”¹Windows11ISOï¼Œåç§°ä¸éœ€è¦å¸¦å¼•å·
+set /p SorF=è¾“å…¥ISO^>
 if not exist "%SorF%" goto ps
 if "%SorF:~-4%" NEQ ".iso" goto pus
 echo=
-echo ÕýÔÚÌáÈ¡%SorF%ÄÚµÄÎÄ¼þ
+echo æ­£åœ¨æå–%SorF%å†…çš„æ–‡ä»¶
 if not exist Cache mkdir Cache
 @Assets\bin\7z x -y -oCache "%SorF%"|Findstr "Everything is Ok" >nul && echo off || goto ERR
 cd Cache\sources
@@ -116,37 +114,37 @@ cd..\..
 dism /UnMount-Wim /MountDir:Mt /commit
 rd /s /q Mt
 cls
-title Windows11Hacker [ISOÖÆ×÷]
+title Windows11Hacker [ISOåˆ¶ä½œ]
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÕýÔÚÖÆ×÷ISO...
+echo æ­£åœ¨åˆ¶ä½œISO...
 set iso="%cd%\11Hacker_%random%.iso"
 Assets\bin\cdimage.exe -bootdata:2#p0,e,bCache\boot\Etfsboot.com#pEF,e,bCache\efi\microsoft\boot\Efisys.bin -u1 -udfver102 -l"Windows11_Media" "%cd%\Cache" "%iso%"|Findstr "Done." >nul && echo off || goto ERR
 if exist Cache rd /s /q Cache
 cls
-title Windows11Hacker [Íê³É]
+title Windows11Hacker [å®Œæˆ]
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÖÆ×÷ÁËISO,Î»ÖÃ%iso%
+echo åˆ¶ä½œäº†ISO,ä½ç½®%iso%
 pause
 exit /b
 :ERR
 cls
-title Windows11Hacker [ÕýÊ½Ä£¿é]
+title Windows11Hacker [æ­£å¼æ¨¡å—]
 if exist Cache rd /s /q Cache
 echo Windows11Hacker
 echo=
-echo ÖØÖÆ°æ 1.2
+echo é‡åˆ¶ç‰ˆ 1.2
 echo=
-echo °²×°×îÐÂµÄ11Hacker,ÁË½âÐÂ¹¦ÄÜÓë¸Ä½ø!
+echo å®‰è£…æœ€æ–°çš„11Hacker,äº†è§£æ–°åŠŸèƒ½ä¸Žæ”¹è¿›!
 echo=
-echo ÐÞ¸ÄISOÊ§°Ü
+echo ä¿®æ”¹ISOå¤±è´¥
 pause>nul
