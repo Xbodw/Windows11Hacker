@@ -17,9 +17,13 @@ set aria2c="https://github.com/Xbodw/Rele/raw/main/aria2c.exe"
 cd /d %~dp0
 :up
 title Windows11Hacker [检查更新]
-powershell curl  -o "Versions.xml" "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml" 
+if exist "Assets\aria2c.exe" (
+ Assets\aria2c -c -s 16 "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml"
+ ) else (
+powershell curl  -o "Versions.xml" "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml"
+)
 set "ver=0.0"
-    for /f "tokens=3 delims=<>" %%a in (
+    for /f "tokens=2 delims=<>" %%a in (
         'find /i "<Version>" ^< "Versions.xml"'
     ) do set "ver=%%a"
 del /f /q Versions.xml
