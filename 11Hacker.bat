@@ -14,27 +14,32 @@ cscript "%temp%\getadmin.vbs" >nul
 exit /B
 :gotAdmin
 set aria2c="https://github.com/Xbodw/Rele/raw/main/aria2c.exe"
+ipconfig /flushdns >nul 
 cd /d %~dp0
 :up
 title Windows11Hacker [检查更新]
-if exist "Assets\aria2c.exe" (
- Assets\aria2c -c -s 16 "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml"
- ) else (
-powershell curl  -o "Versions.xml" "https://raw.githubusercontent.com/Xbodw/Windows11Hacker/main/Versions.xml"
-)
+echo 正在检查Windows11Hacker更新!
+ powershell curl  -o "Versions.xml" "https://github.com/Xbodw/Windows11Hacker/raw/main/Versions.xml"
 set "ver=0.0"
     for /f "tokens=2 delims=<>" %%a in (
         'find /i "<Version>" ^< "Versions.xml"'
     ) do set "ver=%%a"
 del /f /q Versions.xml
-if "%ver%" GEQ "1.3" (
+if "%ver%" GEQ "1.4" (
  echo 发现新版本，正在自动更新
+ if exist "Assets\aria2c.exe" (
+ Assets\aria2c -c -s 16 -o "11Hacker-n.bat" "https://github.com/Xbodw/Windows11Hacker/raw/main/11Hacker.bat"
+ ) else (
  powershell curl -o "11Hacker-n.bat" "https://github.com/Xbodw/Windows11Hacker/raw/main/11Hacker.bat"
+)
+if not exist "11Hacker-n.bat" cls & goto pd
  echo @echo off > cp.bat
- echo copy /y "11Hacker-n.bat" "11Hacker.bat" >>cp.bat
- start "" "cmd.exe /c cp.bat" 
+ echo powershell Get-Content -Path "11Hacker-n.bat" -Encoding UTF8 ^^^|Out-File -Encoding "unicode" 11Hacker.bat >>cp.bat
+ echo pause >> cp.bat
+ echo del /f /q "11Hacker-n.bat" >> cp.bat
+ echo del /f /q "%%0" >> cp.bat
+ start "" "cmd.exe" /c "%cd%\cp.bat" 
  exit /b
- pause
 )
 goto pd
 :pd
@@ -66,9 +71,9 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 正在下载Windows11Hacker必要的组件，下载之后将进行Windows修改
 echo=
@@ -80,9 +85,9 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 正在下载Windows11Hacker必要的组件，下载之后将进行Windows修改
 Assets\aria2c -c -s 16 -d "%cd%\Assets" "https://github.com/Xbodw/Rele/raw/main/7z.exe"
@@ -99,9 +104,9 @@ cls
 title Windows11Hacker [正式模块]
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 请选择一个待修改Windows11ISO，名称不需要带引号
 set /p SorF=输入ISO^>
@@ -141,9 +146,9 @@ cls
 title Windows11Hacker [ISO制作]
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 正在制作ISO...
 set iso="%cd%\11Hacker_%random%.iso"
@@ -153,9 +158,9 @@ cls
 title Windows11Hacker [完成]
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 制作了ISO,位置%iso%
 pause
@@ -166,9 +171,9 @@ title Windows11Hacker [正式模块]
 if exist Cache rd /s /q Cache
 echo Windows11Hacker
 echo=
-echo 重制版 1.3
+echo 重制版 1.4
 echo=
-echo 安装最新的11Hacker,了解新功能与改进!
+echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
 echo 修改ISO失败
 pause>nul
