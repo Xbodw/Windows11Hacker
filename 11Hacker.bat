@@ -16,31 +16,6 @@ exit /B
 set aria2c="https://github.com/Xbodw/Rele/raw/main/aria2c.exe"
 ipconfig /flushdns >nul 
 cd /d %~dp0
-:up
-title Windows11Hacker [检查更新]
-echo 正在检查Windows11Hacker更新!
- powershell curl  -o "Versions.xml" "https://github.com/Xbodw/Windows11Hacker/raw/main/Versions.xml"
-set "ver=0.0"
-    for /f "tokens=2 delims=<>" %%a in (
-        'find /i "<Version>" ^< "Versions.xml"'
-    ) do set "ver=%%a"
-del /f /q Versions.xml
-if "%ver%" GEQ "1.4" (
- echo 发现新版本，正在自动更新
- if exist "Assets\aria2c.exe" (
- Assets\aria2c -c -s 16 -o "11Hacker-n.bat" "https://github.com/Xbodw/Windows11Hacker/raw/main/11Hacker.bat"
- ) else (
- powershell curl -o "11Hacker-n.bat" "https://github.com/Xbodw/Windows11Hacker/raw/main/11Hacker.bat"
-)
-if not exist "11Hacker-n.bat" cls & goto pd
- echo @echo off > cp.bat
- echo powershell Get-Content -Path "11Hacker-n.bat" -Encoding UTF8 ^^^|Out-File -Encoding "unicode" 11Hacker.bat >>cp.bat
- echo pause >> cp.bat
- echo del /f /q "11Hacker-n.bat" >> cp.bat
- echo del /f /q "%%0" >> cp.bat
- start "" "cmd.exe" /c "%cd%\cp.bat" 
- exit /b
-)
 goto pd
 :pd
 title Windows11Hacker [下载组件]
@@ -71,7 +46,7 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
@@ -85,7 +60,7 @@ goto pd
 cls
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
@@ -104,7 +79,7 @@ cls
 title Windows11Hacker [正式模块]
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
@@ -146,7 +121,7 @@ cls
 title Windows11Hacker [ISO制作]
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
@@ -158,7 +133,7 @@ cls
 title Windows11Hacker [完成]
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
@@ -171,7 +146,7 @@ title Windows11Hacker [正式模块]
 if exist Cache rd /s /q Cache
 echo Windows11Hacker
 echo=
-echo 重制版 1.4
+echo 重制版 1.5
 echo=
 echo 安装最新的11Hacker,了解新功能与改进!https://github.com/Xbodw/Windows11Hacker
 echo=
